@@ -1,0 +1,256 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+@import "shadcn/tailwind.css";
+
+:root {
+  /* Brand Palette Hex Codes */
+  --eclipse-black: #0f1115;
+  --deep-slate: #1f2933; /* OSP dark blue*/
+  --neural-blue: #273644;
+  --sovereign-teal: #1e5f6e;
+  --library-cream: #f4f1ea;
+  --signal-amber: #c28a2e;
+  --ethical-red: #7a1e1e;
+  --boundary-violet: #3e2f5b;
+
+  --light-blue-50: #007a7a0d;
+  --light-blue-100: #007a7a1a;
+
+  --slate-50: #F4F6F8;
+  --gray-100: #f3f4f6;
+  --gray-200: #e5e7eb;
+  --gray-300: #d1d5db;
+  --gray-400: #9ca3af;
+  --gray-600: #4b5563;
+
+  --background: var(--slate-50);
+  --foreground: var(--deep-slate);
+  --foreground-soft: var(--gray-400);
+  --foreground-secondary: var(--gray-600);
+  --foreground-secondary-hover: var(--deep-slate);
+  
+  --card-bg: var(--slate-50);
+  --card-border: var(--gray-200);
+
+  --primary: var(--slate-50);
+  --primary-hover: var(--gray-100);
+  --primary-foreground: var(--gray-600);
+  --primary-foreground-hover: var(--deep-slate);
+  --primary-border: var(--gray-300);
+  --primary-foreground-disabled: var(--gray-400);
+
+  --secondary: var(--gray-200);
+  --secondary-hover: var(--gray-300);
+  --secondary-foreground: var(--gray-600);
+  --secondary-foreground-hover: var(--deep-slate);
+  --secondary-border: var(--gray-300);
+
+  --inverted: var(--deep-slate);
+  --inverted-foreground: var(--slate-50);
+
+  --font-heading: "League Spartan", sans-serif;   
+  --font-interface: "Cooper Hewitt", sans-serif; 
+  --font-body: "Manrope", sans-serif;            
+}
+
+@theme inline {
+  --color-background: var(--background); /* Page background */
+  --color-foreground: var(--foreground); /* Page text */
+  --color-foreground-soft: var(--foreground-soft);
+  --color-foreground-secondary: var(--foreground-secondary);
+  --color-foreground-secondary-hover: var(--foreground-secondary-hover);
+
+  --color-card: var(--card-bg);
+  --color-border: var(--card-border);
+  
+  --color-primary: var(--primary); /* Element (e.g., buttons, inputs) background */
+  --color-primary-hover: var(--primary-hover);
+  --color-primary-foreground: var(--primary-foreground); /* Element text */
+  --color-primary-foreground-hover: var(--primary-foreground-hover);
+  --color-primary-border: var(--primary-border);
+  --color-primary-foreground-disabled: var(--primary-foreground-disabled);
+
+  --color-secondary: var(--secondary); /* Element (e.g., buttons, inputs) background */
+  --color-secondary-hover: var(--secondary-hover);
+  --color-secondary-foreground: var(--secondary-foreground); /* Element text */
+  --color-secondary-foreground-hover: var(--secondary-foreground-hover);
+  --color-secondary-border: var(--secondary-border);
+
+  --color-inverted: var(--inverted); /* Contrast elements (e.g., subtitles) background */
+  --color-inverted-foreground: var(--inverted-foreground);
+
+  --font-sans: var(--font-body);
+  --font-display: var(--font-heading); 
+  --font-ui: var(--font-interface);   
+}
+
+.dark {
+  --background: var(--eclipse-black);
+  --foreground: var(--slate-50);
+  --foreground-soft: var(--gray-400);
+  --foreground-secondary: var(--gray-300);
+  --foreground-secondary-hover: var(--slate-50);
+  
+  --card-bg: var(--deep-slate);
+  --card-border: var(--neural-blue);
+
+  --primary: var(--deep-slate);
+  --primary-hover: var(--neural-blue);
+  --primary-foreground: var(--gray-300);
+  --primary-foreground-hover: var(--slate-50);
+  --primary-border: var(--neural-blue);
+  --primary-foreground-disabled: var(--gray-600);
+
+  --secondary: var(--neural-blue);
+  --secondary-hover: var(--sovereign-teal);
+  --secondary-foreground: var(--gray-200);
+  --secondary-foreground-hover: var(--slate-50);
+  --secondary-border: var(--neural-blue);
+
+  --inverted: var(--slate-50);
+  --inverted-foreground: var(--deep-slate);
+}
+
+/* LOW CONTRAST & DYSLEXIA SUPPORT
+   Uses a soft warm cream-gray background, increased padding variables 
+   if needed, and high-readability muted tints to prevent visual stress.*/
+.low-contrast {
+  --background: #e4e1d7;
+  --foreground: #43474b;
+  --foreground-soft: #85898d;
+  --foreground-secondary: #5c6064;
+  --foreground-secondary-hover: #2d3033;
+  
+  --card-bg: #edeae0;
+  --card-border: #cdc9be;
+
+  --primary: #edeae0;
+  --primary-hover: #dedacfa;
+  --primary-foreground: #5c6064;
+  --primary-foreground-hover: #2d3033;
+  --primary-border: #c0bbaee;
+  --primary-foreground-disabled: #9e9a91;
+
+  --secondary: #dedacf;
+  --secondary-hover: #cdc9be;
+  --secondary-foreground: #5c6064;
+  --secondary-foreground-hover: #2d3033;
+  --secondary-border: #c0bbbe;
+
+  --inverted: #43474b;
+  --inverted-foreground: #edeae0;
+}
+
+/* LOW CONTRAST DARK MODE
+   Deep charcoal-slate base with muted cream-gray text. Zero pure blacks or whites. */
+.low-contrast-dark {
+  --background: #1a1d21;
+  --foreground: #a8aaa4;
+  --foreground-soft: #5b5e62;
+  --foreground-secondary: #7f827d;
+  --foreground-secondary-hover: #c4c6c0;
+  
+  --card-bg: #23272c;
+  --card-border: #2e333a;
+
+  --primary: #23272c;
+  --primary-hover: #2e333a;
+  --primary-foreground: #7f827d;
+  --primary-foreground-hover: #c4c6c0;
+  --primary-border: #353a42;
+  --primary-foreground-disabled: #484c52;
+
+  --secondary: #2e333a;
+  --secondary-hover: #3a414a;
+  --secondary-foreground: #7f827d;
+  --secondary-foreground-hover: #c4c6c0;
+  --secondary-border: #3a414a;
+
+  --inverted: #a8aaa4;
+  --inverted-foreground: #1a1d21;
+}
+
+/* COLORBLIND: BLUE-YELLOW (Tritanopia Safe)
+   Eliminates dependencies on muddy greens/reds; emphasizes clear slate 
+   blues, sharp yellows, and high tonal contrast profiles. */
+.blue-yellow {
+  --background: #0f172a; /* Deep slate base */
+  --foreground: #fef08a; /* Vibrant light yellow text */
+  --foreground-soft: #64748b;
+  --foreground-secondary: #94a3b8;
+  --foreground-secondary-hover: #fef08a;
+  
+  --card-bg: #1e293b;
+  --card-border: #334155;
+
+  --primary: #1e293b;
+  --primary-hover: #334155;
+  --primary-foreground: #e2e8f0;
+  --primary-foreground-hover: #fef08a;
+  --primary-border: #475569;
+  --primary-foreground-disabled: #64748b;
+
+  --secondary: #334155;
+  --secondary-hover: #0284c7;
+  --secondary-foreground: #fef08a;
+  --secondary-foreground-hover: #ffffff;
+  --secondary-border: #475569;
+
+  --inverted: #fef08a;
+  --inverted-foreground: #0f172a;
+}
+
+/* COLORBLIND: GREEN-MAGENTA (Deuteranopia/Protanopia Safe)
+   Swaps traditional red/green traps for high-contrast combinations of 
+   rich dark purples, soft mints, and deep magentas. */
+.green-magenta {
+  --background: #1c0f24; /* Deep Plum Black */
+  --foreground: #adfa1d; /* Accessible Mint Neon */
+  --foreground-soft: #705480;
+  --foreground-secondary: #c0a0d0;
+  --foreground-secondary-hover: #adfa1d;
+  
+  --card-bg: #2d193a;
+  --card-border: #4c2f5e;
+
+  --primary: #2d193a;
+  --primary-hover: #4c2f5e;
+  --primary-foreground: #f3e8ff;
+  --primary-foreground-hover: #adfa1d;
+  --primary-border: #5c3b75;
+  --primary-foreground-disabled: #705480;
+
+  --secondary: #4c2f5e;
+  --secondary-hover: #e02424;
+  --secondary-foreground: #f3e8ff;
+  --secondary-foreground-hover: #adfa1d;
+  --secondary-border: #5c3b75;
+
+  --inverted: #adfa1d;
+  --inverted-foreground: #1c0f24;
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-body);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+h1, h2, h3, .font-monolith {
+  font-family: var(--font-heading);
+  text-transform: uppercase;
+  letter-spacing: -0.02em;
+  font-weight: 700;
+}
+
+.font-institutional {
+  font-family: var(--font-interface);
+  letter-spacing: 0.01em;
+}
+
+code, pre, .font-technical {
+  font-family: var(--font-body);
+}
