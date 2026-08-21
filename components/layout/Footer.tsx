@@ -69,6 +69,14 @@ export default function Footer() {
                   API & Developer Kits
                 </Link>
               </li>
+              <li>
+                <Link
+                  href="/contact"
+                  className="font-sans text-sm text-foreground-secondary hover:text-foreground transition-colors"
+                >
+                  Contact
+                </Link>
+              </li>
             </ul>
           </div>
 
@@ -78,6 +86,26 @@ export default function Footer() {
               Social
             </h3>
             <ul className="flex flex-col gap-2">
+              <li>
+                <a
+                  href="https://www.twitch.tv/doublethinksolutions"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="font-sans text-sm text-foreground-secondary hover:text-foreground transition-colors inline-flex items-center gap-1.5"
+                >
+                  Twitch
+                </a>
+              </li>
+              <li>
+                <a
+                  href=" https://www.facebook.com/profile.php?id=61592794764590"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="font-sans text-sm text-foreground-secondary hover:text-foreground transition-colors inline-flex items-center gap-1.5"
+                >
+                  Facebook
+                </a>
+              </li>
               <li>
                 <a
                   href="https://x.com/StopDoublethink"
@@ -117,14 +145,6 @@ export default function Footer() {
                 >
                   Instagram
                 </a>
-              </li>
-              <li>
-                <Link
-                  href="/contact"
-                  className="font-sans text-sm text-foreground-secondary hover:text-foreground transition-colors"
-                >
-                  Contact
-                </Link>
               </li>
             </ul>
           </div>
