@@ -41,6 +41,19 @@ function FadeInSection({ children }: { children: ReactNode }) {
 }
 
 export default function HomeClient() {
+  const [isRecording, setIsRecording] = useState(true);
+  const videoRef = useRef<HTMLVideoElement>(null);
+
+  useEffect(() => {
+    if (videoRef.current) {
+      if (isRecording) {
+        videoRef.current.play().catch(() => {});
+      } else {
+        videoRef.current.pause();
+      }
+    }
+  }, [isRecording]);
+
   return (
     <div className="relative min-h-screen w-full">
       
@@ -48,6 +61,7 @@ export default function HomeClient() {
         <div className="absolute inset-0 bg-black/40 z-1" />
         <div className="w-full h-full scale-105 blur-2xl opacity-75">
           <video
+            ref={videoRef}
             autoPlay
             loop
             muted
@@ -60,7 +74,7 @@ export default function HomeClient() {
       </div>
 
       <div className="relative z-10 w-full">
-        <KickstarterHero />
+        <KickstarterHero isRecording={isRecording} setIsRecording={setIsRecording} />
         
         {/* Animated subsequent sections */}
         <FadeInSection><MainProductSection /></FadeInSection>

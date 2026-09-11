@@ -20,11 +20,12 @@ export default function KickstarterCta() {
         {/* Right Side action link */}
         <div>
           <a
+            href="https://www.kickstarter.com/projects/opensourcepanopticon/the-open-source-panopticon-osp"
             target="_blank"
             rel="noopener noreferrer"
             className="inline-flex items-center gap-1.5 px-6 py-3 rounded-xl bg-background text-foreground font-sans text-xs font-bold tracking-wider uppercase border border-foreground hover:opacity-95 shadow-md transition-all group"
           >
-            Kickstarter Coming Soon...
+            Support Kickstarter
             <ChevronRight className="w-3.5 h-3.5 transition-transform group-hover:translate-x-0.5" />
           </a>
         </div>

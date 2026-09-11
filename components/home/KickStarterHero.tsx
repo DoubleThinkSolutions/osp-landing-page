@@ -4,8 +4,12 @@ import { useState, useEffect } from 'react';
 import { ChevronRight } from 'lucide-react';
 import LandscapePhoneFrame from '../extra/LandscapePhoneFrame';
 
-export default function KickstarterHero() {
-  const [isRecording, setIsRecording] = useState(true);
+interface KickstarterHeroProps {
+  isRecording: boolean;
+  setIsRecording: (value: boolean | ((prev: boolean) => boolean)) => void;
+}
+
+export default function KickstarterHero({ isRecording, setIsRecording }: KickstarterHeroProps) {
   const [seconds, setSeconds] = useState(12 * 3600 + 43 * 60); // Starting at 00:12:43 as per original UI
 
   // Handle the live timer interval
@@ -71,11 +75,12 @@ export default function KickstarterHero() {
               <div className="absolute inset-x-0 top-2/3 border-b border-white/5 pointer-events-none" />
 
               {/* Camera Shutter / Capture Button UI Column */}
-              <div className="absolute right-8 top-1/2 -translate-y-1/2 flex flex-col items-center gap-6 pointer-events-auto">
+              <div className="absolute right-8 top-1/2 -translate-y-1/2 flex flex-col items-center gap-2 pointer-events-auto">
                 <button 
                   onClick={() => setIsRecording(!isRecording)}
-                  className={`cursor-pointer w-14 h-14 rounded-full border-4 flex items-center justify-center bg-transparent transition-all hover:scale-105 active:scale-95 group border-red-600/70`}
-                  aria-label={isRecording ? "Stop recording" : "Start recording"}
+                  className="cursor-pointer w-14 h-14 rounded-full border-4 flex items-center justify-center bg-transparent transition-all hover:scale-105 active:scale-95 group border-red-600/70"
+                  aria-label={isRecording ? "Pause recording" : "Resume recording"}
+                  title={isRecording ? "Pause recording and background video" : "Resume recording and background video"}
                 >
                   <div className={`transition-all duration-300 bg-red-600/70 ${
                     isRecording 
@@ -99,11 +104,12 @@ export default function KickstarterHero() {
 
               <div className="flex items-center gap-3 w-full">
                 <a
+                  href="https://www.kickstarter.com/projects/opensourcepanopticon/the-open-source-panopticon-osp"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="group px-5 py-2.5 rounded-lg bg-primary text-primary-foreground font-sans text-[11px] font-bold tracking-wider uppercase border border-primary-border/40 hover:bg-primary-hover shadow-lg transition-all flex items-center gap-1.5"
                 >
-                  Kickstarter Coming Soon ...
+                  Support Kickstarter
                   <ChevronRight className="w-3 h-3 transition-transform group-hover:translate-x-0.5" />
                 </a>
                 <a
