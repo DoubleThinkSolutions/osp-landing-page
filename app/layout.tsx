@@ -8,6 +8,7 @@ import Footer from "@/components/layout/Footer";
 import BrandLogo from "@/components/header/BrandLogo";
 import NavigationBar from "@/components/header/NavigationBar";
 import { HeaderControls } from "@/components/header/HeaderControls";
+import { GoogleAnalytics } from "@next/third-parties/google";
 
 const leagueSpartan = League_Spartan({
   subsets: ["latin"],
@@ -88,6 +89,7 @@ export default function RootLayout({
           <Footer />
         </AppProvider>
       </body>
+      <GoogleAnalytics gaId="AW-18321366063" />
     </html>
   );
 }
